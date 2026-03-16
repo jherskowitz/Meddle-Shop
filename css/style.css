@@ -274,6 +274,14 @@ a.work-card {
 .card-thumb {
   height: 200px;
   position: relative;
+  overflow: hidden;
+}
+
+.card-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-thumb.software   { background: linear-gradient(135deg, #667eea, #764ba2); }
