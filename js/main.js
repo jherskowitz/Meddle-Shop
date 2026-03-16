@@ -27,6 +27,91 @@ links.querySelectorAll('a').forEach(link => {
   });
 });
 
+// Carousel scroll buttons
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const prevBtn = carousel.querySelector('.carousel-btn--prev');
+  const nextBtn = carousel.querySelector('.carousel-btn--next');
+  const scrollAmount = 300;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxContent = document.getElementById('lightbox-content');
+const lightboxCounter = document.getElementById('lightbox-counter');
+let lightboxSlides = [];
+let lightboxIndex = 0;
+
+function openLightbox(slides, index) {
+  lightboxSlides = slides;
+  lightboxIndex = index;
+  showLightboxSlide();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showLightboxSlide() {
+  const slide = lightboxSlides[lightboxIndex];
+  const img = slide.querySelector('img');
+  const placeholder = slide.querySelector('.carousel-placeholder');
+
+  if (img) {
+    lightboxContent.innerHTML = `<img src="${img.src}" alt="${img.alt || ''}">`;
+  } else if (placeholder) {
+    const clone = placeholder.cloneNode(true);
+    lightboxContent.innerHTML = '';
+    lightboxContent.appendChild(clone);
+  }
+  lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxSlides.length}`;
+}
+
+function lightboxPrev() {
+  lightboxIndex = (lightboxIndex - 1 + lightboxSlides.length) % lightboxSlides.length;
+  showLightboxSlide();
+}
+
+function lightboxNext() {
+  lightboxIndex = (lightboxIndex + 1) % lightboxSlides.length;
+  showLightboxSlide();
+}
+
+// Lightbox event listeners
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.querySelector('.lightbox-nav--prev').addEventListener('click', lightboxPrev);
+lightbox.querySelector('.lightbox-nav--next').addEventListener('click', lightboxNext);
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lightboxPrev();
+  if (e.key === 'ArrowRight') lightboxNext();
+});
+
+// Carousel slide click -> open lightbox
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => openLightbox(slides, i));
+  });
+});
+
 // Portfolio filter
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.work-card');

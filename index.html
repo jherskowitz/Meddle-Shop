@@ -88,6 +88,30 @@
             </div>
           </a>
 
+          <article class="work-card work-card--wide" data-category="photography">
+            <div class="card-body">
+              <h3 class="card-title">Select Photography</h3>
+              <p class="card-desc">A curated collection of photographs.</p>
+            </div>
+            <div class="carousel" id="photo-carousel">
+              <div class="carousel-track">
+                <!-- TODO: Replace placeholder images with real photos -->
+                <button class="carousel-slide" data-index="0"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #2c3e50, #3498db);"></div></button>
+                <button class="carousel-slide" data-index="1"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #e74c3c, #f39c12);"></div></button>
+                <button class="carousel-slide" data-index="2"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #1abc9c, #2ecc71);"></div></button>
+                <button class="carousel-slide" data-index="3"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #9b59b6, #3498db);"></div></button>
+                <button class="carousel-slide" data-index="4"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #e67e22, #e74c3c);"></div></button>
+                <button class="carousel-slide" data-index="5"><div class="carousel-placeholder" style="background: linear-gradient(135deg, #2c3e50, #1abc9c);"></div></button>
+              </div>
+              <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+              </button>
+            </div>
+          </article>
+
           <article class="work-card" data-category="software">
             <div class="card-thumb software">
               <span class="card-category">Software</span>
@@ -212,6 +236,21 @@
       <p>Made at Meddle Shop</p>
     </div>
   </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lightbox-nav lightbox-nav--prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <button class="lightbox-nav lightbox-nav--next" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+    </button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
