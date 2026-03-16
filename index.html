@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meddle Shop — A One-Man Maker Studio</title>
+  <meta name="description" content="Meddle Shop is a one-man maker studio crafting software, hardware, photography, music, and more.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">meddle shop</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <h1 class="hero-title">Meddle Shop</h1>
+      <p class="hero-tagline">Software. Hardware. Photography. Music. And everything in between.</p>
+      <a href="#about" class="hero-arrow" aria-label="Scroll down">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section-title">About</p>
+        <h2 class="section-heading">A one-man maker studio.</h2>
+        <div class="about-content">
+          <!-- TODO: Replace with real bio -->
+          <p>Meddle Shop is where curiosity meets craft. It's a solo studio dedicated to making things across disciplines — writing code, designing circuits, capturing photographs, composing music, and exploring whatever else sparks interest.</p>
+          <p>The philosophy is simple: stay curious, ship things, and never stop learning. Every project is an excuse to dig deeper into a craft and make something worth sharing.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="container">
+        <p class="section-title">Work</p>
+        <h2 class="section-heading">Selected projects.</h2>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="software">Software</button>
+          <button class="filter-btn" data-filter="hardware">Hardware</button>
+          <button class="filter-btn" data-filter="photography">Photography</button>
+          <button class="filter-btn" data-filter="music">Music</button>
+        </div>
+
+        <div class="work-grid">
+
+          <!-- TODO: Replace placeholder projects with real ones -->
+
+          <article class="work-card" data-category="software">
+            <div class="card-thumb software">
+              <span class="card-category">Software</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Relay CLI</h3>
+              <p class="card-desc">A fast command-line tool for managing local dev environments and automating repetitive workflows.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="hardware">
+            <div class="card-thumb hardware">
+              <span class="card-category">Hardware</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Split Ortho Keyboard</h3>
+              <p class="card-desc">A custom split ortholinear mechanical keyboard with hand-wired switches and a 3D-printed case.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="photography">
+            <div class="card-thumb photography">
+              <span class="card-category">Photography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Urban Quiet</h3>
+              <p class="card-desc">A photo series exploring empty urban spaces in the early morning hours before the city wakes up.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="software">
+            <div class="card-thumb software">
+              <span class="card-category">Software</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tint</h3>
+              <p class="card-desc">An open-source color palette generator that builds accessible color systems from a single seed color.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="music">
+            <div class="card-thumb music">
+              <span class="card-category">Music</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Tape Hiss EP</h3>
+              <p class="card-desc">Four ambient tracks recorded to cassette, exploring lo-fi textures and tape degradation as an instrument.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="hardware">
+            <div class="card-thumb hardware">
+              <span class="card-category">Hardware</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Room Sensor Node</h3>
+              <p class="card-desc">An ESP32-based environmental sensor that tracks temperature, humidity, and air quality over MQTT.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="photography">
+            <div class="card-thumb photography">
+              <span class="card-category">Photography</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Macro World</h3>
+              <p class="card-desc">Extreme close-up photography of everyday objects, revealing patterns invisible to the naked eye.</p>
+            </div>
+          </article>
+
+          <article class="work-card" data-category="other">
+            <div class="card-thumb other">
+              <span class="card-category">Other</span>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Workshop Zine</h3>
+              <p class="card-desc">A small-run printed zine documenting the process of building a home workshop from scratch.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="section-title">Contact</p>
+        <h2 class="section-heading">Get in touch.</h2>
+        <div class="contact-content">
+          <p>Have a question, want to collaborate, or just want to say hello? Reach out through any of the channels below.</p>
+          <!-- TODO: Replace with real links -->
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:hello@meddleshop.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4l-10 8L2 4"/></svg>
+                Email
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jherskowitz" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/meddleshop" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Made at Meddle Shop</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
