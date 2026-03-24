@@ -47,6 +47,7 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 const lightbox = document.getElementById('lightbox');
 const lightboxContent = document.getElementById('lightbox-content');
 const lightboxCounter = document.getElementById('lightbox-counter');
+const lightboxCaption = document.getElementById('lightbox-caption');
 let lightboxSlides = [];
 let lightboxIndex = 0;
 
@@ -76,6 +77,17 @@ function showLightboxSlide() {
     lightboxContent.appendChild(clone);
   }
   lightboxCounter.textContent = `${lightboxIndex + 1} / ${lightboxSlides.length}`;
+
+  // Show caption if slide has one
+  const caption = slide.dataset.caption;
+  const captionDesc = slide.dataset.captionDesc;
+  if (caption) {
+    lightboxCaption.innerHTML = `<h3>${caption}</h3>${captionDesc ? `<p>${captionDesc}</p>` : ''}`;
+    lightboxCaption.style.display = '';
+  } else {
+    lightboxCaption.innerHTML = '';
+    lightboxCaption.style.display = 'none';
+  }
 }
 
 function lightboxPrev() {
@@ -109,6 +121,22 @@ document.querySelectorAll('.carousel').forEach(carousel => {
   const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
   slides.forEach((slide, i) => {
     slide.addEventListener('click', () => openLightbox(slides, i));
+  });
+});
+
+// Hardware card click -> open lightbox
+document.querySelectorAll('.work-card[data-category="hardware"]').forEach(card => {
+  card.addEventListener('click', () => {
+    const img = card.querySelector('.card-thumb-img');
+    const title = card.querySelector('.card-title');
+    const desc = card.querySelector('.card-desc');
+    if (!img) return;
+    // Create a virtual slide element for the lightbox
+    const slide = document.createElement('div');
+    slide.innerHTML = `<img src="${img.src}" alt="${img.alt || ''}">`;
+    if (title) slide.dataset.caption = title.textContent;
+    if (desc) slide.dataset.captionDesc = desc.textContent;
+    openLightbox([slide], 0);
   });
 });
 
