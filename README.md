@@ -2,7 +2,7 @@
 
 A one-man maker studio of software, hardware, photography, music, and more.
 
-**Live site:** [meddleshop.com](https://jherskowitz.github.io/Meddle-Shop/)
+**Live site:** [meddleshop.com](https://meddleshop.com)
 
 ## About
 
