@@ -2,6 +2,8 @@
 const nav = document.getElementById('nav');
 const hero = document.getElementById('hero');
 
+const heroLogo = document.querySelector('.hero-logo');
+
 const heroObserver = new IntersectionObserver(
   ([entry]) => {
     nav.classList.toggle('scrolled', !entry.isIntersecting);
@@ -9,6 +11,14 @@ const heroObserver = new IntersectionObserver(
   { threshold: 0.1 }
 );
 heroObserver.observe(hero);
+
+const logoObserver = new IntersectionObserver(
+  ([entry]) => {
+    nav.classList.toggle('show-logo', !entry.isIntersecting);
+  },
+  { threshold: 0 }
+);
+if (heroLogo) logoObserver.observe(heroLogo);
 
 // Mobile menu toggle
 const toggle = document.getElementById('nav-toggle');

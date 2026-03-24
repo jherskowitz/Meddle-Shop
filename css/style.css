@@ -75,6 +75,16 @@ img {
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav.show-logo .nav-logo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-links {
